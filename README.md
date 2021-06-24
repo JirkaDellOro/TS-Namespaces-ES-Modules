@@ -15,7 +15,7 @@ Unfortunately, ES-Modules appear not to go well together with the beloved namesp
 > At this point of time, the changes are minimal to get these tests working. It's actually almost shocking considering the many people struggling with it and projects merely failing because of it. And it seems as if it should to be possible to have the TypeScript-compiler taking care of this, thus bringing together the best of the module- and the namespace-world directly out of the box. However, this process has not been tested against various use-cases, so comments, ideas, improvements and any help is greatly appreciated. Maybe a proposal to the TypeScript-developers evolves from this...
 
 ## 1. Pure namespaces
-See example [PureNamespace](PureNamespace)  
+See example [PureNamespace](PureNamespace/Test.html)  
 
 - Don't use import {} or import() in the namespace files. Using `import someVariableName = someNamespaceName;` is okay though, since it merely just defines an alias for an object in global scope.
 - Adjust tsconfig to "target": "ESNext", "module": "system", "declaration": true and define an "outFile".
@@ -56,6 +56,7 @@ See example [PureNamespace](PureNamespace)
 - In order to get type checking at design time, make sure to reference the d.ts-file either in the configuration file using `types` or as triple-slash directive in the code.  
 
 ## 2. Pure module
+See example [PureModule](PureModule/Test.html)  
 Making the program being based on ES-modules via the TypeScript compiler is a desaster. Compiling into one file is only possible with `system` or `amd`, so switching to any other `module`-directive emits one js-file for each ts-file. It would be necessary to use a bundler to pack them back into one file. Also, using imports in the TypeScript code deters the use of namespaces. TypeScript tells that the namespace is declared but never used and won't find declarations in other files, though appearently in the same namespace. It's then necessary in every file to explicitely import everything used in that file. While using modules this way reduces clutter in the global scope at runtime, it appears to me that it adds a lot of clutter, additional workload and a bloated toolchain at design time.  
 
 ---
@@ -82,7 +83,7 @@ But astonishingly, it seems to be quite easy to convert the compiled code from t
 ---
 
 ## 3. Mix module and namespace
-See example [MixModuleNamespace](MixModuleNamespace)  
+See example [MixModuleNamespace](MixModuleNamespace/Test.html)  
 - First, switch back Consumer.js to the output from 1. or just delete the line added in 2.   
 - The browser now complains that Library is not defined, since it was not loaded anywhere.
 - So load the library with a script-tag in the HTML-file and `type="module"` before loading Consumer.js. Also remove the type-attribute from the script tag loading the Consumer-script, since it is not a module (any more).
