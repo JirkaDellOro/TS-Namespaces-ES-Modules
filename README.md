@@ -1,8 +1,9 @@
 # TS-Namespaces and ES-Modules
 <smallest>Jirka Dell'Oro-Friedl, June 2021</smallest>    
-Read this page in nice format and view the examples running here: https://jirkadelloro.github.io/TS-Namespaces-ES-Modules/  
+Read this page in nice format and view the examples running on [Github-Pages](https://jirkadelloro.github.io/TS-Namespaces-ES-Modules/)  
 
 ---
+
 I love TypeScript and I love namespaces in TypeScript!  
 
 I can spread my project over several files, for example create a file for each class, and compile it all together in one single Javascript file, without the need of imports and extra code for module handling etc. It's nice and easy to create a clean and well structured package, easy to load into the browser using the most simple script tag in HTML.  
