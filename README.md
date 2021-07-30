@@ -16,7 +16,7 @@ Unfortunately, ES-Modules appear not to go well together with the beloved namesp
 3. Then I'll try to mix both approaches having the library still as a module, built with namespaces, but the consuming code as a simple script using namespaces. Again, I'll work on the Javascript-level.
 
 > At this point of time, the changes are minimal to get these tests working. It's actually almost shocking considering the many people struggling with it and projects merely failing because of it. And it seems as if it should to be possible to have the TypeScript-compiler taking care of this, thus bringing together the best of the module- and the namespace-world directly out of the box. However, this process has not been tested against various use-cases, so comments, ideas, improvements and any help is greatly appreciated. Maybe a proposal to the TypeScript-developers evolves from this...   
-> Please post issues here: https://github.com/JirkaDellOro/TS-Namespaces-ES-Modules/issues
+> Please post issues here: [https://github.com/JirkaDellOro/TS-Namespaces-ES-Modules/issues](https://github.com/JirkaDellOro/TS-Namespaces-ES-Modules/issues)
 
 ## 1. Pure namespaces
 See example [PureNamespace](PureNamespace/Test.html)  
